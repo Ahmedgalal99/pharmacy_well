@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "incremental": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/pages/requests.js", "src/pages/index.js", 
+  "src/Components/cardSlider.js", "src/Components/CategorySliderCard.js",
+   "src/Components/cardBanner.js", "src/Components/OurServicesCard.js",
+    "src/Components/Testimonial.js", "src/pages/login old.js", "src/pages/login.js" ,"src/pages/review.js", "src/pages/verification.js", "src/Components/Ulits/ModalContent.js", "src/Components/Ulits/modalcontact.js"],
+  "exclude": ["node_modules"]
+}

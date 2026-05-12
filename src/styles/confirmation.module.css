@@ -1,0 +1,62 @@
+.btn {
+  width: 191px;
+  height: 39px;
+  border: 12px 24px 12px 24px;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle {
+  width: 126px;
+  height: 118px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 80%;
+  position: relative;
+}
+.Bigcircle {
+  width: 360px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: "#EDEDED";
+  border: 2px solid #0f439242;
+}
+.w-100 {
+  width: 100% !important;
+}
+.heddin {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem;
+  min-height: 100vh;
+  position: relative;
+  max-width: 430px;
+}
+@media only screen and (min-width: 600px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0rem;
+    min-height: 100vh;
+    max-width: 50%;
+    margin: auto;
+    position: relative;
+  }
+}

@@ -1,0 +1,175 @@
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-start;
+    align-items: center;
+    padding: 0rem;
+    min-height: 100vh;
+    max-width: 100%;
+    position: relative;
+   
+  }
+  .txtExplore{
+    height: 10px;
+    
+    /* small screen-body */
+    font-family: 'Fira Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 20px;
+    
+    /* identical to box height, or 133% */
+    
+    /* Medic-Secondary color */
+    color: #DD1717;
+    
+    
+    /* Inside auto layout */
+    
+    }
+    
+    .boxwhite{
+      display: flex;
+        justify-content:space-between;
+        align-items: center;
+      box-sizing: border-box;
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 16px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    width: 95%;
+    height: 71px;
+    
+    
+    background: #FFFFFF;
+    border: 0.5px solid #979797;
+    border-radius: 8px;
+    }
+ .number{
+font-family: Fira Sans;
+font-size: 16px;
+font-weight: 400;
+line-height: 24px;
+letter-spacing: 0px;
+text-align: center;
+margin-left: 5px;
+
+ }
+  .textBtnTrack{
+font-family: "bold";
+font-size: 15px;
+font-weight: 500;
+line-height: 15px;
+letter-spacing: 0.5px;
+text-align: center;
+
+
+  }
+  .button{
+    width:90%;
+    height:44px;
+    border:12px 24px 12px 24px;
+    gap: 10px;;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  .title{
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    color: #DD1717;
+    padding-top: 20px;
+    
+    
+
+  }
+  .textsub{
+    font-family: Fira Sans;
+    font-size: 17px;
+    /* font-weight: 900; */
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    
+  }
+  .textsub1{
+  /* If you need a help from our pharmacists or want to order a specific prescription contact us via */
+
+width: 366px;
+height: 48px;
+
+/* small screen-small */
+font-family: 'Fira Sans';
+font-style: normal;
+font-weight: 200;
+font-size: 14px;
+line-height: 24px;
+/* or 150% */
+text-align: center;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 1;
+
+  }
+  .contact{
+    height: 15px;
+width: 77px;
+left: 5px;
+top: 2px;
+border-radius: nullpx;
+color: "blue";
+
+  }
+
+  .bottomsheet{
+    /* width:50% !important ;
+    left: 25% !important; */
+    height: 33%;
+    
+  }
+@media only screen and (min-width: 600px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0rem;
+    min-height: 100vh;
+    max-width: 50%;
+      margin: auto;
+      position: relative;
+
+  }
+
+  .bottomsheet{
+    width:50% 
+    
+  }
+  }
+  @media only screen and (min-width: 800px) {
+    .modalDesktop{
+      width: 50% !important;
+      left: 25% !important;
+     }
+     .react-modal-sheet-container{
+      top: 20% !important;
+    
+     }
+    }
+ .w-95 {
+  width: 95% !important;
+ }

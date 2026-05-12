@@ -1,0 +1,261 @@
+.main {
+  position: relative;
+}
+.boxfilter {
+  display: flex;
+  align-items: center;
+  width: 25%;
+  height: 36px;
+  background: #bccbe3;
+  border: 1px solid rgba(15, 67, 146, 0.3);
+  border-radius: 4px;
+}
+.iconfilter {
+  margin-left: 5px;
+  margin-right: 5px;
+  width: 20px;
+  height: 12px;
+}
+.boxinfo {
+  width: 100%;
+  text-align: left;
+  padding: 0 10px;
+}
+.txtcard {
+  width: 100%;
+  font-family: "Fira Sans";
+  font-size: 12px;
+  /* height: 50px; */
+  overflow: hidden;
+  color: #828282;
+}
+.boxcardprdoduct {
+  box-sizing: border-box;
+  /* Auto layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px 0px 8px;
+  gap: 10px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: #fff;
+  border: 0.5px solid #979797;
+  border-radius: 5px;
+  justify-content: space-between;
+}
+
+.discount {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 8px;
+
+  position: absolute;
+  width: 45px;
+  height: 24px;
+  left: 138px;
+  top: 9px;
+
+  background: rgba(15, 67, 146, 0.3);
+  border-radius: 4px;
+}
+.cardproductImage {
+  margin-top: 5px;
+  background: #fff;
+  border-radius: 3px;
+}
+.titlecard {
+  font-family: "Fira Sans";
+  width: 100%;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-weight: 700;
+}
+.greybox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 5px;
+  border: 0.5px solid #979797;
+  background-color: white;
+  border-radius: 5px;
+  margin: 2.5px;
+}
+.txtofboxgrey {
+  font-family: "Fira Sans";
+  font-size: 12px;
+  margin-bottom: 0;
+  color: #202223;
+}
+.button {
+  width: 400px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  background-color: white;
+  margin-bottom: 16px;
+  border-radius: 3px;
+  border: 1px solid #0f4392;
+  padding: 0px 10px;
+  font-size: 18px;
+}
+
+@media (max-width: 567px) {
+  .button {
+    width: fit-content;
+    font-size: 14px;
+  }
+  .txtExplore {
+    font-size: 16px !important;
+  }
+}
+
+.ButtonMak {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  height: 31px;
+
+  background: #0f4392;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  flex: none;
+  order: 0;
+  flex-grow: 1;
+}
+
+.bottomsheet {
+  /* width:50% !important ;
+  left: 25% !important; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.txtExplore {
+  font-family: "Fira Sans";
+  font-weight: 500;
+  font-size: 20px;
+  margin-bottom: 0;
+  color: #dd1717;
+}
+.boxwhite {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  /* width: 95%; */
+  height: 60px;
+  font-weight: bold;
+  background: #ffffff;
+  border: 0.5px solid #979797;
+  border-radius: 8px;
+}
+
+.boxLabeld {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  background-color: rgba(221, 23, 23, 0.2);
+  color: black;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.boxLabeld.active {
+  background-color: #dd1717;
+  color: white;
+}
+
+.label {
+  font-family: "Fira Sans";
+  font-size: 14px;
+  padding: 5px 8px;
+}
+.txtfilter {
+  width: 45px;
+  height: 15px;
+
+  /* small screen-button */
+  font-family: "Fira Sans";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 15px;
+  /* identical to box height, or 100% */
+  text-align: center;
+  letter-spacing: 0.5px;
+
+  /* Medic-Primary color */
+  color: #0f4392;
+
+  /* Inside auto layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.boxsearch {
+  box-sizing: border-box;
+
+  /* Auto layout */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  width: 70%;
+  height: 36px;
+
+  /* Surface/Disabled */
+  background: #fafbfb;
+  /* Border/Disabled */
+  border: 1px solid #d2d5d8;
+  border-radius: 4px;
+}
+@media only screen and (min-width: 600px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0rem;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  .bottomsheet {
+    width: 100%;
+    left: 0;
+  }
+
+}
+
+@media (max-width: 576px) {
+  .button {
+    width: fit-content;
+  }
+
+  .boxImg1 {
+    padding: 0 !important;
+  }
+
+  .boxImg1 img {
+    width: 90px;
+    height: 110px;
+  }
+}

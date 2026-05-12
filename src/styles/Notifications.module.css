@@ -1,0 +1,47 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0rem;
+  min-height: 100vh;
+  max-width: 100%;
+  position: relative;
+}
+
+.notifyItem {
+  padding: 10px 80px 10px 20px;
+  border-radius: 5px;
+  color: #2F3032;
+  margin-bottom: 10px;
+  position: relative;
+  cursor: pointer;
+  background-color: #eaeaea;
+
+}
+
+.notifyItem:hover {
+  background-color: #eaeaea;
+}
+
+.new {
+  background-color: #E7ECF4;
+}
+@media only screen and (min-width: 600px) {
+  .main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0rem;
+    min-height: 100vh;
+    max-width: 50%;
+    margin: auto;
+    position: relative;
+  }
+
+  .bottomsheet {
+    width: 100%;
+    left: 0;
+  }
+}
