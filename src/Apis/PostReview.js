@@ -1,6 +1,7 @@
 import useNotifications from "@/Components/Notification";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "./config";
 
 async function PostReview(formdata) {
   const token = JSON.parse(localStorage.getItem("token"));
@@ -16,7 +17,7 @@ async function PostReview(formdata) {
       },
     };
     const response = await axios.post(
-      "https://backend.well-medic.com/reviews",
+      `${API_BASE_URL}/reviews`,
       formdata,
       config
     );

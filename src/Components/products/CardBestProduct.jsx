@@ -45,7 +45,7 @@ const CardBestProduct = ({ item }) => {
     }
   };
   const onCardClick = () => {
-    router.push(`/products/${item?.category}/details/${item?.id}`);
+    router.push(`/products/details/${item?.id}`);
     dispatch(setProductDetails(item));
   };
   return (
@@ -95,6 +95,11 @@ const CardBestProduct = ({ item }) => {
           >
             {item?.name}
           </p>
+          {item?.price ? (
+            <p style={{ color: "var(--theme-lime-dark)", fontWeight: "800", marginBottom: "8px" }}>
+              ${Number(item.price).toFixed(2)}
+            </p>
+          ) : null}
           <p
             className={styles.txtcard}
             style={{

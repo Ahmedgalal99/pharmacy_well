@@ -43,7 +43,7 @@ const SerachBar = ({ showBigScreen }) => {
           type="text"
           style={{
             paddingLeft: "2.55rem",
-            backgroundColor: "#f7f7f7",
+            backgroundColor: "rgba(255, 255, 255, 0.95)",
             height: "50px",
           }}
           className="form-control py-2 fs-6"

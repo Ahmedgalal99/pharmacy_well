@@ -1,11 +1,9 @@
 import axios from "axios";
+import { API_BASE_URL } from "./config";
 
 async function Postcontactus(Data) {
   try {
-    const response = await axios.post(
-      "https://backend.well-medic.com/contactus",
-      Data
-    );
+    const response = await axios.post(`${API_BASE_URL}/contactus`, Data);
     console.log(response.data);
     return response.data;
   } catch (error) {

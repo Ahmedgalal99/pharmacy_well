@@ -6,9 +6,9 @@
   align-items: center;
   width: 25%;
   height: 36px;
-  background: #bccbe3;
-  border: 1px solid rgba(15, 67, 146, 0.3);
-  border-radius: 4px;
+  background: var(--theme-lime-soft);
+  border: 1px solid var(--theme-border);
+  border-radius: 14px;
 }
 .iconfilter {
   margin-left: 5px;
@@ -56,8 +56,8 @@
   height: 24px;
   right: 10px;
   top: 5px;
-  background: rgba(15, 67, 146, 0.3);
-  border-radius: 4px;
+  background: rgba(132, 204, 22, 0.2);
+  border-radius: 999px;
 }
 .cardproductImage {
   margin-top: 5px;
@@ -97,7 +97,7 @@
   background-color: white;
   margin-bottom: 16px;
   border-radius: 3px;
-  border: 1px solid #0F4392;
+  border: 1px solid var(--theme-lime);
   padding: 0px 10px;
   font-size: 12px;
   width: 210px;
@@ -111,7 +111,7 @@
   padding: 8px 16px;
   height: 31px;
 
-  background: #0f4392;
+  background: var(--theme-lime);
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   flex: none;
@@ -131,7 +131,7 @@
   font-weight: 700;
   font-size: 14px;
   margin-bottom: 0;
-  color: #dd1717;
+  color: var(--theme-lime-dark);
 }
 .boxwhite {
   display: flex;
@@ -172,7 +172,7 @@
   letter-spacing: 0.5px;
 
   /* Medic-Primary color */
-  color: #0f4392;
+  color: var(--theme-lime-dark);
 
   /* Inside auto layout */
   flex: none;

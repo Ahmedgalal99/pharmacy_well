@@ -17,7 +17,7 @@ const CardProduct = ({ item, id }) => {
   const [isLoading, setLoading] = useState(false);
   const SendCartFun = async (e) => {
     const formData = {
-      product: id,
+      product: item?.id,
       quantity: 1,
     };
 
@@ -47,7 +47,7 @@ const CardProduct = ({ item, id }) => {
     }
   };
   const onCardClick = () => {
-    router.push(`/products/${id}/details/${item?.id}`);
+    router.push(`/products/details/${item?.id}`);
     dispatch(setProductDetails(item));
   };
 
@@ -92,6 +92,11 @@ const CardProduct = ({ item, id }) => {
 
         <div className={styles.boxinfo}>
           <p className={styles.titlecard}>{item?.name}</p>
+          {item?.price ? (
+            <p style={{ color: "var(--theme-lime-dark)", fontWeight: "800", marginBottom: "8px" }}>
+              ${Number(item.price).toFixed(2)}
+            </p>
+          ) : null}
           <p style={{ maxHeight: "90px" }} className={styles.txtcard}>
             {item?.description}
           </p>

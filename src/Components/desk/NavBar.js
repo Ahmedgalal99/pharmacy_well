@@ -59,7 +59,7 @@ const NavBar = () => {
     <nav
       className="navbar navbar-expand-lg bg-white d-none d-lg-flex"
       style={{
-        boxShadow: "0px 18px 40px 0px rgba(0, 0, 0, 0.06)",
+        boxShadow: "0px 18px 40px 0px rgba(77, 124, 15, 0.12)",
         height: "80px",
       }}
     >
@@ -140,7 +140,7 @@ const NavBar = () => {
                   <div
                     className="position-absolute text-white rounded-5 d-flex justify-content-center align-items-center"
                     style={{
-                      backgroundColor: "red",
+                      backgroundColor: "var(--theme-lime-dark)",
                       top: "-5px",
                       left: "-8px",
                       width: "20px",
@@ -157,7 +157,7 @@ const NavBar = () => {
                       className="position-absolute bg-white p-3 rounded-3"
                       style={{
                         top: "35px",
-                        boxShadow: "0px 18px 40px 0px #00000029",
+                        boxShadow: "0px 18px 40px 0px rgba(77, 124, 15, 0.16)",
                         right: "10px",
                         width: "430px",
                         fontSize: "16px",
@@ -233,7 +233,7 @@ const NavBar = () => {
                         className="position-absolute py-3 bg-white rounded-3"
                         style={{
                           top: "40px",
-                          boxShadow: "0px 18px 40px 0px #00000029",
+                          boxShadow: "0px 18px 40px 0px rgba(77, 124, 15, 0.16)",
                           right: "10px",
                           width: "130px",
                           fontSize: "16px",
@@ -276,8 +276,8 @@ const NavBar = () => {
                   className="btn btn-outline-success me-2"
                   style={{
                     backgroundColor: "white",
-                    borderColor: "#0F4392",
-                    color: "#0F4392",
+                    borderColor: "var(--theme-lime)",
+                    color: "var(--theme-lime-dark)",
                     width: "100px",
                   }}
                 >
@@ -289,7 +289,7 @@ const NavBar = () => {
                   className="btn btn-outline-success"
                   style={{
                     color: "white",
-                    backgroundColor: "#0F4392",
+                    backgroundColor: "var(--theme-lime)",
                     width: "100px",
                   }}
                   type="submit"

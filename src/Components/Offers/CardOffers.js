@@ -17,8 +17,8 @@ const CardOffers = ({ item }) => {
     e.preventDefault();
 
     const formData = {
-      product: 2,
-      quantity: 5,
+      product: item?.id || 2,
+      quantity: 1,
     };
 
     const res = await PostCart(formData);

@@ -1,124 +1,121 @@
-import React, { useState, useEffect } from "react";
-import BottomNav from "../Components/Ulits/BottomNav";
-import NavBar from "@/Components/desk/NavBar";
-import { Breadcrumb, Col, Collapse, Container, Row } from "react-bootstrap";
-import FooterDesk from "@/Components/desk/FooterDesk";
-import Spinner from "react-bootstrap/Spinner";
-import PostCart, {
-  CreateOrder,
-  getAllOrdersHistory,
-} from "../Apis/Cart/PostCart";
-import NavBarMobail from "@/Components/desk/NavBarMobail";
-import WriteReview from "@/Components/Ulits/WriteReview";
-import Support from "@/Components/Ulits/Support";
-import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Head from "next/head";
 import Link from "next/link";
-import SizesExample from "../Components/Spinner";
+import { useRouter } from "next/router";
+import BottomNav from "@/Components/Ulits/BottomNav";
+import FooterDesk from "@/Components/desk/FooterDesk";
+import SizesExample from "@/Components/Spinner";
+import Support from "@/Components/Ulits/Support";
+import WriteReview from "@/Components/Ulits/WriteReview";
+import { getAllOrdersHistory } from "@/Apis/Cart/PostCart";
+import styles from "@/styles/storefront.module.css";
+import { StorefrontNav } from "@/Components/storefront/StorefrontShared";
 
-const requests = () => {
+export default function OrdersPage() {
   const router = useRouter();
-  const [isLoadingPage, setisLoadingPage] = useState(true);
+  const [isLoadingPage, setIsLoadingPage] = useState(true);
   const [openReview, setOpenReview] = useState(false);
-  const [orders, setOrders] = useState(null);
+  const [orders, setOrders] = useState([]);
 
-  const GetOrderFun = async () => {
-    const res = await getAllOrdersHistory();
-    setisLoadingPage(false);
-
-    if (res.message == "well_medic_you_did_not_have_cart_to_make_order") {
-    } else {
-      setOrders(res?.results);
-    }
-    console.log(res, "ressss");
-    return res;
-  };
   useEffect(() => {
-    GetOrderFun();
-  }, []);
-  const [user, setuser] = useState(null);
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setuser(JSON.parse(localStorage?.getItem("user")));
-    }
+    if (typeof window === "undefined") return;
 
     if (!localStorage.getItem("user")) {
       router.push("/login");
     }
+  }, [router]);
+
+  useEffect(() => {
+    const loadOrders = async () => {
+      const res = await getAllOrdersHistory();
+      setOrders(res?.results || []);
+      setIsLoadingPage(false);
+    };
+
+    loadOrders();
   }, []);
 
   return (
-    <main style={{ backgroundColor: "#eaeaea", width: "100%" }}>
-      <NavBarMobail titlePage="My orders" />
+    <div className={styles.page}>
+      <Head>
+        <title>Orders | Pharmacy Well</title>
+      </Head>
 
-      <NavBar />
-      {isLoadingPage ? (
-        <SizesExample />
-      ) : (
-        <>
-          <Container>
-            <Breadcrumb
-              style={{ fontSize: "18px" }}
-              className="d-none d-lg-block mt-3"
-            >
-              <Breadcrumb.Item linkAs={Link} href="/">
-                Home
-              </Breadcrumb.Item>
-              <Breadcrumb.Item linkAs={Link} href="/products/all">
-                Our products
-              </Breadcrumb.Item>
-              <Breadcrumb.Item active>My orders</Breadcrumb.Item>
-            </Breadcrumb>
-          </Container>
+      <StorefrontNav />
 
-          <div className=" py-5">
-            <h1
-              className="text-center h3 my-4 d-none d-lg-block fw-bold"
-              style={{ color: "#0F4392" }}
-            >
-              My orders
+      <section className={styles.hero}>
+        <div className={`${styles.container} ${styles.heroGrid}`}>
+          <div className={styles.heroCard}>
+            <span className={styles.eyebrow}>Order history</span>
+            <h1 className={styles.heroTitle}>
+              Track every pharmacy request in the same <span style={{ color: "var(--theme-lime)" }}>storefront style.</span>
             </h1>
-            {orders ? (
-              <Row className=" d-flex">
-                {orders?.map((item, i) => (
-                  <Col md={6} className="mb-3">
-                    <Row className=" m-2 align-items-center">
-                      <Link href={`/tracking?orderId=${item?.id}`}>
-                        <div className="card">
-                          <span className="card1" href="#">
-                            <p>Status : {item?.status}</p>
-                            <p className="small">Order Id : {item?.order_id}</p>
-                            <div className="go-corner" href="#">
-                              <div className="go-arrow">→</div>
-                            </div>
-                          </span>
-                        </div>
-                      </Link>
-                    </Row>
-                  </Col>
-                ))}
-              </Row>
-            ) : (
-              <div className="d-flex justify-content-center">
-                <Spinner animation="border" role="status">
-                  <span className="visually-hidden">Loading...</span>
-                </Spinner>
-              </div>
-            )}
+            <p className={styles.heroSubtitle}>
+              Your post-checkout flow now stays inside the same visual system as home, products, and cart.
+            </p>
+            <div className={styles.heroActions}>
+              <Link href="/products/all" className={styles.primaryButton}>
+                Browse products
+              </Link>
+              <Link href="/requests" className={styles.secondaryButton}>
+                Open cart
+              </Link>
+            </div>
           </div>
-        </>
-      )}
 
-      <div className="d-block d-sm-none">
+          <div className={styles.darkPanel}>
+            <div className={styles.panelTitle}>History snapshot</div>
+            <div className={styles.statGrid} style={{ marginTop: 0 }}>
+              <div className={styles.statCard}>
+                <span className={styles.statValue}>{orders.length}</span>
+                <span className={styles.statLabel}>Saved orders</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.section}>
+        <div className={`${styles.container} ${styles.sectionCard}`}>
+          {isLoadingPage ? (
+            <SizesExample />
+          ) : orders.length > 0 ? (
+            <div className={styles.grid}>
+              {orders.map((item) => (
+                <Link key={item?.id} href={`/tracking?orderId=${item?.id}`} className={styles.productCard}>
+                  <div className={styles.productBody}>
+                    <div className={styles.productMeta}>
+                      <span className={styles.metaTag}>Order #{item?.order_id || item?.id}</span>
+                      <span className={styles.metaTag}>{item?.status || "Pending"}</span>
+                    </div>
+                    <h3 className={styles.productTitle}>Track this request</h3>
+                    <p className={styles.productCopy}>
+                      Open the tracking view to see the current delivery or confirmation status for this pharmacy order.
+                    </p>
+                    <div className={styles.productFooter}>
+                      <span className={styles.primaryButton}>Open tracking</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          ) : (
+            <div className={styles.emptyState}>
+              <h3>No orders yet</h3>
+              <p>Your submitted pharmacy requests will appear here once you place an order from the cart.</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      <FooterDesk />
+
+      <div className={styles.mobileOnly}>
         <BottomNav />
-      </div>
-      <div className="d-none d-sm-block">
-        <FooterDesk />
       </div>
 
       <WriteReview setOpen={setOpenReview} open={openReview} />
       <Support />
-    </main>
+    </div>
   );
-};
-
-export default requests;
+}

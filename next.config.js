@@ -5,10 +5,21 @@ const nextConfig = {
   // distDir: "build",
 
   images: {
+    domains: [
+      "wellmedic2.s3.amazonaws.com",
+      "inews.fra1.digitaloceanspaces.com",
+      "fra1.digitaloceanspaces.com",
+    ],
     remotePatterns: [
       {
         protocol: "https",
         hostname: "wellmedic2.s3.amazonaws.com",
+        port: "",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
+        hostname: "inews.fra1.digitaloceanspaces.com",
         port: "",
         pathname: "/**",
       },

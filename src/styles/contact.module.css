@@ -24,7 +24,7 @@
     /* identical to box height, or 133% */
     
     /* Medic-Secondary color */
-    color: #DD1717;
+    color: var(--theme-lime-dark);
     
     
     /* Inside auto layout */
@@ -48,9 +48,9 @@
     height: 71px;
     
     
-    background: #FFFFFF;
-    border: 0.5px solid #979797;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    border: 1px solid var(--theme-border);
+    border-radius: 18px;
     }
  .number{
 font-family: Fira Sans;
@@ -88,7 +88,7 @@ text-align: center;
     line-height: 24px;
     letter-spacing: 0px;
     text-align: center;
-    color: #DD1717;
+    color: var(--theme-lime-dark);
     padding-top: 20px;
     
     

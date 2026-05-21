@@ -15,7 +15,7 @@ function OurServicesCard({ image, desc, title }) {
       />
       <div className="text-start ms-3">
         <h5 className="text-primary fs-5">{title}</h5>
-        <p className="fs-5">{desc}</p>
+        <p className="fs-5" style={{ color: "var(--theme-muted)" }}>{desc}</p>
       </div>
     </div>
   );

@@ -2,6 +2,7 @@ import useNotifications from "../../Components//Notification";
 import axios from "axios";
 import { Router, useRouter } from "next/router";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "../config";
 
 async function PostCart(formdata) {
   const token = JSON.parse(localStorage.getItem("token"));
@@ -12,12 +13,11 @@ async function PostCart(formdata) {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
-
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     };
     const response = await axios.post(
-      "https://backend.well-medic.com/cart/cart_items/",
+      `${API_BASE_URL}/cart/cart_items/`,
       formdata,
       config
     );
@@ -42,12 +42,11 @@ export async function CreateOrder(formdata) {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
-
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     };
     const response = await axios.post(
-      "https://backend.well-medic.com/order/",
+      `${API_BASE_URL}/order/`,
       formdata,
       config
     );
@@ -72,14 +71,10 @@ export async function getOrders(formdata) {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
-
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     };
-    const response = await axios.get(
-      "https://backend.well-medic.com/order",
-      config
-    );
+    const response = await axios.get(`${API_BASE_URL}/order`, config);
     // showNotification(` Success!`, "success");
     return response?.data;
   } catch (error) {
@@ -95,12 +90,11 @@ export async function getOrderHistory(formdata) {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
-
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     };
     const response = await axios.get(
-      `https://backend.well-medic.com/order/history/${formdata?.id}`,
+      `${API_BASE_URL}/order/history/${formdata?.id}`,
       config
     );
     // showNotification(` Success!`, "success");
@@ -118,14 +112,10 @@ export async function getAllOrdersHistory(formdata) {
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
-
-        "Content-Type": "multipart/form-data",
+        "Content-Type": "application/json",
       },
     };
-    const response = await axios.get(
-      `https://backend.well-medic.com/order/history`,
-      config
-    );
+    const response = await axios.get(`${API_BASE_URL}/order/history`, config);
     // showNotification(` Success!`, "success");
     return response?.data;
   } catch (error) {
@@ -146,7 +136,7 @@ export async function DeleteCart(formdata) {
       },
     };
     const response = await axios.delete(
-      `https://backend.well-medic.com/cart/cart_items/${formdata?.id}`,
+      `${API_BASE_URL}/cart/cart_items/${formdata?.id}`,
       config
     );
     showNotification(`Item Deleted Successfuly`, "success");

@@ -1,12 +1,13 @@
 import axios from "axios";
 import useNotifications from "../Components//Notification";
 import { useRouter } from "next/router";
+import { API_BASE_URL } from "./config";
 
 export const Register = async (credentials) => {
-  const { showNotification } = useNotifications();
+    const { showNotification } = useNotifications();
   try {
     const response = await axios.post(
-      "https://backend.well-medic.com/accounts/register/",
+      `${API_BASE_URL}/accounts/register/`,
       credentials
     );
     console.log(response.data);
@@ -32,7 +33,7 @@ export const loginUser = async (credentials) => {
 
   try {
     const response = await axios.post(
-      "https://backend.well-medic.com/accounts/login/",
+      `${API_BASE_URL}/accounts/login/`,
       credentials
     );
     console.log(response.data);
@@ -52,7 +53,7 @@ export const loginUser = async (credentials) => {
 };
 export const GetHotels = async (credentials) => {
   try {
-    const response = await axios.get("https://backend.well-medic.com/hotels");
+    const response = await axios.get(`${API_BASE_URL}/hotels`);
 
     return response.data;
   } catch (error) {
@@ -62,7 +63,7 @@ export const GetHotels = async (credentials) => {
 export const GetHotelsDetails = async (credentials) => {
   try {
     const response = await axios.get(
-      "https://backend.well-medic.com/hotels" + credentials?.hotel_id
+      `${API_BASE_URL}/hotels${credentials?.hotel_id}`
     );
 
     return response.data;
@@ -73,9 +74,7 @@ export const GetHotelsDetails = async (credentials) => {
 
 export const GetRooms = async (credentials) => {
   try {
-    const response = await axios.get(
-      "https://backend.well-medic.com/hotels/rooms"
-    );
+    const response = await axios.get(`${API_BASE_URL}/hotels/rooms`);
 
     return response.data;
   } catch (error) {}
@@ -93,9 +92,7 @@ export const updateUser = async (credentials) => {
       },
     };
     const response = await axios.patch(
-      "https://backend.well-medic.com/accounts/update_profile" +
-        credentials?.id +
-        "/",
+      `${API_BASE_URL}/accounts/update_profile${credentials?.id}/`,
       credentials,
       config
     );

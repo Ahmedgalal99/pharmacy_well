@@ -1,6 +1,7 @@
 import useNotifications from "../Components//Notification";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { API_BASE_URL } from "./config";
 
 export async function GetNotification(formdata) {
   const token = JSON?.parse(localStorage?.getItem("token"));
@@ -14,11 +15,7 @@ export async function GetNotification(formdata) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await axios.get(
-      "https://backend.well-medic.com/notification",
-
-      config
-    );
+    const response = await axios.get(`${API_BASE_URL}/notification`, config);
     return response?.data;
   } catch (error) {
     for (const key in error?.response?.data) {
@@ -41,11 +38,7 @@ export async function MakeNotificationRead(formdata) {
         Authorization: `Bearer ${token}`,
       },
     };
-    const response = await axios.post(
-      `https://backend.well-medic.com/notification`,
-      {},
-      config
-    );
+    const response = await axios.post(`${API_BASE_URL}/notification`, {}, config);
     // showNotification(`Item Deleted Successfuly`, "success");
     return response.data;
   } catch (error) {

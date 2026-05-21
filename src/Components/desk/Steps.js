@@ -11,12 +11,12 @@ const Steps = ({ imgsource, title, text, desc, className }) => {
         style={{
           fontSize: "16px !important",
           marginBottom: 0,
-          color: "#0F4392",
+          color: "var(--theme-lime-dark)",
         }}
       >
         {title}
       </p>
-      <p style={{ color: "#0F4392", fontSize: "18px !important" }}> {text}</p>
+      <p style={{ color: "var(--theme-lime-dark)", fontSize: "18px !important" }}> {text}</p>
       <Image
         //  className="w-20"
         src={imgsource}
@@ -29,7 +29,7 @@ const Steps = ({ imgsource, title, text, desc, className }) => {
       <p
         className="text-center mt-3"
         style={{
-          color: "#0F4392",
+          color: "var(--theme-muted)",
           fontSize: "16px !important",
         }}
       >

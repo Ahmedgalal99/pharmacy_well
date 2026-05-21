@@ -6,9 +6,9 @@
   align-items: center;
   width: 25%;
   height: 36px;
-  background: #bccbe3;
-  border: 1px solid rgba(15, 67, 146, 0.3);
-  border-radius: 4px;
+  background: var(--theme-lime-soft);
+  border: 1px solid var(--theme-border);
+  border-radius: 14px;
 }
 .iconfilter {
   margin-left: 5px;
@@ -27,7 +27,7 @@
   font-size: 12px;
   /* height: 50px; */
   overflow: hidden;
-  color: #828282;
+  color: var(--theme-muted);
 }
 .boxcardprdoduct {
   box-sizing: border-box;
@@ -40,9 +40,9 @@
   height: 100%;
   width: 100%;
   position: relative;
-  background: #fff;
-  border: 0.5px solid #979797;
-  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--theme-border);
+  border-radius: 18px;
   justify-content: space-between;
 }
 
@@ -59,8 +59,8 @@
   left: 138px;
   top: 9px;
 
-  background: rgba(15, 67, 146, 0.3);
-  border-radius: 4px;
+  background: rgba(132, 204, 22, 0.2);
+  border-radius: 999px;
 }
 .cardproductImage {
   margin-top: 5px;
@@ -80,7 +80,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2px 5px;
-  border: 0.5px solid #979797;
+  border: 1px solid var(--theme-border);
   background-color: white;
   border-radius: 5px;
   margin: 2.5px;
@@ -101,7 +101,7 @@
   background-color: white;
   margin-bottom: 16px;
   border-radius: 3px;
-  border: 1px solid #0f4392;
+  border: 1px solid var(--theme-lime);
   padding: 0px 10px;
   font-size: 18px;
 }
@@ -124,7 +124,7 @@
   padding: 8px 16px;
   height: 31px;
 
-  background: #0f4392;
+  background: var(--theme-lime);
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.05);
   border-radius: 4px;
   flex: none;
@@ -144,7 +144,7 @@
   font-weight: 500;
   font-size: 20px;
   margin-bottom: 0;
-  color: #dd1717;
+  color: var(--theme-lime-dark);
 }
 .boxwhite {
   display: flex;
@@ -171,14 +171,14 @@
   justify-content: center;
   align-items: center;
   width: fit-content;
-  background-color: rgba(221, 23, 23, 0.2);
+  background-color: rgba(132, 204, 22, 0.2);
   color: black;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .boxLabeld.active {
-  background-color: #dd1717;
+  background-color: var(--theme-lime);
   color: white;
 }
 
@@ -202,7 +202,7 @@
   letter-spacing: 0.5px;
 
   /* Medic-Primary color */
-  color: #0f4392;
+  color: var(--theme-lime-dark);
 
   /* Inside auto layout */
   flex: none;

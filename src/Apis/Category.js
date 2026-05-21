@@ -1,15 +1,13 @@
 import axios from "axios";
+import { API_BASE_URL } from "./config";
 
 async function getallCategories(credentials) {
   try {
-    const response = await axios.get(
-      "https://backend.well-medic.com/category",
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
-    );
+    const response = await axios.get(`${API_BASE_URL}/category`, {
+      headers: {
+        Authorization: "",
+      },
+    });
     // console.log(response.data);
     return response.data;
   } catch (error) {
@@ -19,14 +17,11 @@ async function getallCategories(credentials) {
 }
 export async function getallBrandsApi(credentials) {
   try {
-    const response = await axios.get(
-      "https://backend.well-medic.com/category/brands",
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
-    );
+    const response = await axios.get(`${API_BASE_URL}/category/brands`, {
+      headers: {
+        Authorization: "",
+      },
+    });
     // console.log(response.data);
     return response.data;
   } catch (error) {
@@ -36,14 +31,11 @@ export async function getallBrandsApi(credentials) {
 }
 export async function getallDiseaseApi(credentials) {
   try {
-    const response = await axios.get(
-      "https://backend.well-medic.com/category/disease",
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
-    );
+    const response = await axios.get(`${API_BASE_URL}/category/disease`, {
+      headers: {
+        Authorization: "",
+      },
+    });
     // console.log(response.data);
     return response.data;
   } catch (error) {
@@ -53,14 +45,11 @@ export async function getallDiseaseApi(credentials) {
 }
 export async function getallIngredientApi(credentials) {
   try {
-    const response = await axios.get(
-      "https://backend.well-medic.com/category/ingredient",
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
-    );
+    const response = await axios.get(`${API_BASE_URL}/category/ingredient`, {
+      headers: {
+        Authorization: "",
+      },
+    });
     // console.log(response.data);
     return response.data;
   } catch (error) {
@@ -69,14 +58,11 @@ export async function getallIngredientApi(credentials) {
 }
 export async function getallUsesApi(credentials) {
   try {
-    const response = await axios.get(
-      "https://backend.well-medic.com/category/uses",
-      {
-        headers: {
-          Authorization: "",
-        },
-      }
-    );
+    const response = await axios.get(`${API_BASE_URL}/category/uses`, {
+      headers: {
+        Authorization: "",
+      },
+    });
     // console.log(response.data);
     return response.data;
   } catch (error) {

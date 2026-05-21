@@ -15,7 +15,7 @@ const NavBarMobail = ({
   logo = false,
   titlePage = "",
   sectionRight = true,
-  bgColor = "#0F4392",
+  bgColor = "var(--theme-lime)",
   className,
 }) => {
   const [user, setuser] = useState(null);
@@ -102,7 +102,7 @@ const NavBarMobail = ({
                   <div
                     className="position-absolute text-white rounded-5 d-flex justify-content-center align-items-center"
                     style={{
-                      backgroundColor: "red",
+                      backgroundColor: "var(--theme-lime-dark)",
                       top: "-5px",
                       left: "-8px",
                       width: "15px",
@@ -132,7 +132,7 @@ const NavBarMobail = ({
                         className="position-absolute py-3 bg-white rounded-3"
                         style={{
                           top: "40px",
-                          boxShadow: "0px 18px 40px 0px #00000029",
+                          boxShadow: "0px 18px 40px 0px rgba(77, 124, 15, 0.16)",
                           right: "10px",
                           width: "130px",
                           fontSize: "16px",
@@ -171,8 +171,8 @@ const NavBarMobail = ({
                   className="btn btn-outline-success me-2 d-none d-md-block"
                   style={{
                     backgroundColor: "white",
-                    borderColor: "#0F4392",
-                    color: "#0F4392",
+                    borderColor: "var(--theme-lime)",
+                    color: "var(--theme-lime-dark)",
                     width: "100px",
                   }}
                 >
@@ -184,7 +184,7 @@ const NavBarMobail = ({
                   className="btn btn-outline-success d-none d-md-block"
                   style={{
                     color: "white",
-                    backgroundColor: "#0F4392",
+                    backgroundColor: "var(--theme-lime)",
                     width: "100px",
                   }}
                   type="submit"
@@ -197,8 +197,8 @@ const NavBarMobail = ({
                   className="btn btn-sm btn-outline-success me-1 px-1 d-block d-md-none"
                   style={{
                     backgroundColor: "white",
-                    borderColor: "#0F4392",
-                    color: "#0F4392",
+                    borderColor: "var(--theme-lime)",
+                    color: "var(--theme-lime-dark)",
                     width: "55px",
                   }}
                 >
@@ -210,7 +210,7 @@ const NavBarMobail = ({
                   className="btn btn-sm btn-outline-success d-block d-md-none"
                   style={{
                     color: "white",
-                    backgroundColor: "#0F4392",
+                    backgroundColor: "var(--theme-lime)",
                     width: "55px",
                   }}
                   type="submit"
